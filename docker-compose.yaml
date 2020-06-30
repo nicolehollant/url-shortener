@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  shortener-app:
+    container_name: shortener-app
+    restart: unless-stopped
+    env_file:
+    - backend/.env
+    environment:
+      MONGO_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
+      MONGO_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
+    build: backend
+    ports:
+    - "4005:4000"
+    networks:
+      - app-network
+    
+# # Networks
+# networks:
+#   app-network:
+#     driver: bridge
