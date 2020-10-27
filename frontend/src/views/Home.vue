@@ -64,7 +64,8 @@ export default {
     const clipboard = computed(() => {
       const shortId = responseState?.result?.short_id
       if(shortId) {
-        return `http://localhost:4000/api/${shortId}`
+        // if(process.env.NODE_ENV == "dev") return `http://localhost:4000/api/${shortId}` 
+        return `https://short.colehollant.com/api/${shortId}`
       } else {
         return ''
       }

@@ -15,7 +15,7 @@ services:
     networks:
       - app-network
     
-# # Networks
-# networks:
-#   app-network:
-#     driver: bridge
+# Networks
+networks:
+  app-network:
+    driver: bridge

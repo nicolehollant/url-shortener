@@ -23,8 +23,8 @@ mongoose.connect(
   app.use(cors())
   app.use(bodyParser.json())
   app.use('/app', express.static(__dirname + '/app'))
-  app.use('/api', routes)
-  app.listen({ port: 4000 }, () =>
+  app.use('/', routes)
+  app.listen({ port: 4000, host: '0.0.0.0' }, () =>
     console.log(`🚀 Server ready at http://localhost:4000`)
   );
 })
